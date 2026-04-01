@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 # Install necessary packages
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update \
-    && apt-get install -y wget bzip2make unzip cppcheck
+    && apt-get install -y wget bzip2 make unzip cppcheck
 
 RUN wget -q https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 \
     && tar -xjf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C /usr/local \
@@ -14,7 +14,7 @@ ENV PATH="/usr/local/gcc-arm-none-eabi-10.3-2021.10/bin:${PATH}"
 RUN arm-none-eabi-gcc --version
     #Create a non-root user named "ubuntu"
 # But put in root group since GITHUB actions needs permissions
-# to create tmp files.
+# to create tmp files .
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo \
     -u 1001 ubuntu
 WORKDIR /home/ubuntu 
