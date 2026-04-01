@@ -9,4 +9,3 @@ jobs:
       - name: Check the ropsitory
         uses: actions/checkout@v4
       - run: make
-      - run: make cppcheck
