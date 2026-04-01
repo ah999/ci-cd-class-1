@@ -4,9 +4,7 @@ jobs:
   build-and-static-analysis:
     runs-on: ubuntu-latest
     container:
-      image: ahmedkh11/gcc-arm-none-eabi-10.3-2021.10:latest
-      env:
-        PATH: /opt/gcc-arm-none-eabi-10.3-2021.10/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      image: gcc-arm-none-eabi-10.3-2021.10:latest
     steps:
       - name: Check the ropsitory
         uses: actions/checkout@v4
