@@ -7,6 +7,6 @@ jobs:
       image: ahmedkh11/gcc-arm-none-eabi-10.3-2021.10:latest
     steps:
       - name: Check the ropsitory
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - run: make
       - run: make cppcheck
